@@ -4,7 +4,7 @@ This app is based on the starter template for [Learn Next.js](https://nextjs.org
 
 # Run the app with Nextjs dev server
 
-Run the app using development server using `npm run dev`
+Run the app using development server `npm run dev`
 
 # Build and run with Docker
 
