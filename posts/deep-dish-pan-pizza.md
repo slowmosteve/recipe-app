@@ -5,13 +5,13 @@ date: '2021-09-17'
 
 Notes:
 - This is a modification of the pan pizza recipe from [https://basicswithbabish.co/basicsepisodes/pizza-dough](https://basicswithbabish.co/basicsepisodes/pizza-dough)
-- Makes enough dough for two pizzas using a 10" cast iron skillet.
+- Makes enough dough for one pizza using a 10" cast iron skillet.
 
 Ingredients:
-- 200g flour
-- 0.4 tsp yeast
-- 145g water
-- 12.5 mL olive oil
+- 210g bread flour
+- 0.5 tsp yeast
+- 149g water
+- 13mL olive oil
 - 4g kosher salt
 
 Directions:
