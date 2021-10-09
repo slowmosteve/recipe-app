@@ -8,9 +8,9 @@ Notes:
 - Makes enough dough for one pizza using a 10" cast iron skillet.
 
 Ingredients:
-- 210g bread flour
-- 0.5 tsp yeast
-- 149g water
+- 205g bread flour
+- 0.4 tsp yeast
+- 145g water
 - 13mL olive oil
 - 4g kosher salt
 

@@ -1,10 +1,10 @@
 ---
-title: 'Neopolitan pizza at home'
+title: 'Neapolitan pizza at home'
 date: '2021-09-18'
 ---
 
 Notes:
-- This is a modification of the Neopolitan pizza recipe from [https://thepizzaheaven.com/neapolitan-pizza-in-home-oven/](https://thepizzaheaven.com/neapolitan-pizza-in-home-oven/)
+- This is a modification of the Neapolitan pizza recipe from [https://thepizzaheaven.com/neapolitan-pizza-in-home-oven/](https://thepizzaheaven.com/neapolitan-pizza-in-home-oven/)
 - Makes enough dough for three pizzas
 - Higher hydration, sugar, and oil help improve the crust with the lower temperature and longer bake time in a home oven
 - Pizzas are baked in two stages to allow enough time for the crust to bake without burning toppings
