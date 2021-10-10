@@ -8,8 +8,8 @@ import { getSortedPostsData } from '../lib/posts'
 
 export async function getStaticProps() {
   const jsonAllPostsData = await getSortedPostsData()
-  const allPostsData = JSON.stringify(jsonAllPostsData.sortedPosts)
-  console.log('getStaticProps: '+allPostsData)
+  const allPostsData = JSON.stringify(jsonAllPostsData)
+  console.log('getStaticProps allPostsData: '+allPostsData)
   return {
     props: {
       allPostsData
@@ -26,7 +26,8 @@ export async function getStaticProps() {
 //   }
 // }
 
-export default function Home({ allPostsData }) {
+export default function Home({ getSortedPostsData }) {
+  console.log('Home getSortedPostsData: '+ getSortedPostsData)
   return (
     <Layout home>
       <Head>
@@ -42,10 +43,10 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Recipes</h2>
         <ul className={utilStyles.list}>
-          {allPostsData}
+          {getSortedPostsData}
           
           {/* ARRAY APPROACH */}
-          {/* {allPostsData.array.forEach(element => {
+          {/* {allPostsData.forEach(element => {
             <li className={utilStyles.listItem} key={slug}>
             <Link href={`/posts/${slug}`}>
               <a>{title}</a>
