@@ -7,13 +7,24 @@ import { getSortedPostsData } from '../lib/posts'
 
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const jsonAllPostsData = await getSortedPostsData()
+  const allPostsData = JSON.stringify(jsonAllPostsData.sortedPosts)
+  console.log('getStaticProps: '+allPostsData)
   return {
     props: {
       allPostsData
     }
   }
 }
+
+// export async function getStaticProps() {
+//   const allPostsData = getSortedPostsData()
+//   return {
+//     props: {
+//       allPostsData
+//     }
+//   }
+// }
 
 export default function Home({ allPostsData }) {
   return (
@@ -31,7 +42,22 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Recipes</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData}
+          
+          {/* ARRAY APPROACH */}
+          {/* {allPostsData.array.forEach(element => {
+            <li className={utilStyles.listItem} key={slug}>
+            <Link href={`/posts/${slug}`}>
+              <a>{title}</a>
+            </Link>
+            <br />
+            <small className={utilStyles.lightText}>
+              <Date dateString={date} />
+            </small>
+          </li>
+          })} */}
+          {/* ORIGINAL APPROACH */}
+          {/* {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
             <Link href={`/posts/${id}`}>
               <a>{title}</a>
@@ -41,7 +67,7 @@ export default function Home({ allPostsData }) {
               <Date dateString={date} />
             </small>
           </li>
-          ))}
+          ))} */}
         </ul>
       </section>
     </Layout>
