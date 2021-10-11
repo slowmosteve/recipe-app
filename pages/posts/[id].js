@@ -6,12 +6,12 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 
 
 export async function getStaticProps({ params }) {
-    const postData = await getPostData(params.id)
-    const postData2 = postData.postData[0]
-    console.log('[id].js getStaticProps postData: '+JSON.stringify(postData2))
+    const postDataReponse = await getPostData(params.id)
+    const postData = postDataReponse.postData
+    console.log('[id].js getStaticProps postData: '+JSON.stringify(postData))
     return {
         props: {
-          postData2
+          postData
         }
     }
 }
@@ -35,10 +35,9 @@ export default function Post({ postData }) {
         <article>
           <h1 className={utilStyles.headingXl}>{postData.title}</h1>
           <div className={utilStyles.lightText}>
-            {/* <Date dateString={postData.date} /> */}
+            <Date dateString={postData.date} />
             <p> {postData.recipeText} </p>
           </div>
-          {/* <div dangerouslySetInnerHTML={{ __html: postData.recipeText }} /> */}
         </article>
       </Layout>
     )
