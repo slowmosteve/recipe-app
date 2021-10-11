@@ -8,7 +8,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 export async function getStaticProps({ params }) {
     const postDataReponse = await getPostData(params.id)
     const postData = postDataReponse.postData
-    console.log('[id].js getStaticProps postData: '+JSON.stringify(postData))
+    // console.log('[id].js getStaticProps postData: '+JSON.stringify(postData))
     return {
         props: {
           postData
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ postData }) {
-    console.log('[id].js Post postData: '+JSON.stringify(postData))
+    // console.log('[id].js Post postData: '+JSON.stringify(postData))
     return (
       <Layout>
         <Head>

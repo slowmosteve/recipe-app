@@ -18,15 +18,6 @@ export async function getStaticProps() {
   }
 }
 
-// export async function getStaticProps() {
-//   const allPostsData = getSortedPostsData()
-//   return {
-//     props: {
-//       allPostsData
-//     }
-//   }
-// }
-
 export default function Home({allPostsData}) {
   // console.log('Home getSortedPostsData: '+ allPostsData)
   // console.log('Home getSortedPostsData stringify: '+ JSON.stringify(allPostsData))
