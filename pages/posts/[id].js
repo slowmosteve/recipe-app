@@ -6,19 +6,19 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 
 
 export async function getStaticProps({ params }) {
-    const postData = await getPostData(params.id)
-    console.log('[id].js getStaticProps postData: '+JSON.stringify(postData))
+    const postDataReponse = await getPostData(params.id)
+    const postData = postDataReponse.postData
+    // console.log('[id].js getStaticProps postData: '+JSON.stringify(postData))
     return {
         props: {
-            postData
+          postData
         }
     }
 }
 
 export async function getStaticPaths() {
-    const paths = getAllPostIds()
-    // console.log('[id].js getStaticPaths paths: '+paths)
-    // console.log('[id].js getStaticPaths paths stringify: '+JSON.stringify(paths))
+    const paths = await getAllPostIds()
+    // console.log('[id].js getStaticPaths paths: '+JSON.stringify(paths))
     return {
         paths,
         fallback: false
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ postData }) {
-    console.log('[id].js Post postData: '+JSON.stringify(postData))
+    // console.log('[id].js Post postData: '+JSON.stringify(postData))
     return (
       <Layout>
         <Head>
@@ -36,8 +36,8 @@ export default function Post({ postData }) {
           <h1 className={utilStyles.headingXl}>{postData.title}</h1>
           <div className={utilStyles.lightText}>
             <Date dateString={postData.date} />
+            <p> {postData.recipeText} </p>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
       </Layout>
     )
