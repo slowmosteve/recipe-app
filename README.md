@@ -5,6 +5,7 @@ This app is based on the starter template for [Learn Next.js](https://nextjs.org
 Some helpful references:
 - Dockerfile based on the example here: https://github.com/vercel/next.js/blob/canary/docs/deployment.md 
 - Contentful integration based on the example here: https://bholmes.dev/blog/nextjs-contentful-cms-graphql-oh-my/ 
+- Markdown formatting in NextJS example: https://github.com/hashicorp/next-mdx-remote 
 
 # Run the app with Nextjs dev server
 
