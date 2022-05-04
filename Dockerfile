@@ -11,6 +11,10 @@ FROM node:alpine AS builder
 WORKDIR /app
 COPY . .
 COPY --from=deps /app/node_modules ./node_modules
+ARG SPACE_ID
+ARG TOKEN
+ENV _NEXT_PUBLIC_CONTENTFUL_SPACE_ID=$SPACE_ID
+ENV _NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=$TOKEN
 RUN npm run build && npm install --production --ignore-scripts --prefer-offline
 
 # Production image, copy all the files and run next
