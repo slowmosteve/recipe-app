@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  web:
+    build:
+      context: .
+      args:
+        SPACE_ID: ${_NEXT_PUBLIC_CONTENTFUL_SPACE_ID} 
+        TOKEN: ${_NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}
+    ports:
+      - "3000:3000"

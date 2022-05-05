@@ -13,9 +13,7 @@ Run the app using development server `npm run dev`
 
 # Build and run with Docker
 
-Build the app using `docker build . -t recipe-app --build-arg SPACE_ID=${_NEXT_PUBLIC_CONTENTFUL_SPACE_ID} --build-arg TOKEN=${_NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`
-
-Run the app using `docker run -p 3000:3000 recipe-app`
+Build the app using `docker compose build` followed by `docker compose up`. Shut down the containers with `docker compose down`.
 
 # Build and run on GCP Cloud Run
 

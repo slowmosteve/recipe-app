@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Layout from '../../components/layout'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
@@ -35,11 +36,12 @@ export default function Post({ postData, source }) {
       <Layout>
         <Head>
           <title>{postData.title}</title>
-        </Head>
+        </Head> 
         <article>
           <h1 className={utilStyles.headingXl}>{postData.title}</h1>
           <div className={utilStyles.lightText}>
             <Date dateString={postData.date} />
+            <Image src={postData.recipeImage.url} width={500} height={500}/>
             <MDXRemote {...source} />
           </div>
         </article>
