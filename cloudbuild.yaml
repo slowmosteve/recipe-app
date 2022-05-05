@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/recipe-app-image', '--build-arg', 'SPACE_ID=${_SPACE_ID}', '--build-arg', 'TOKEN=${_TOKEN}', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/recipe-app-image']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'recipe-app', '--image', 'gcr.io/$PROJECT_ID/recipe-app-image', '--region', 'northamerica-northeast1']
+images:
+- gcr.io/$PROJECT_ID/recipe-app-image

@@ -21,6 +21,6 @@ Run the app using `docker run -p 3000:3000 recipe-app`
 
 Note: GCP Cloud Run approach currently doesn't work because changes need to be made to enable Contentful auth
 
-Build the app using `gcloud builds submit --config=cloudbuild.yaml --substitutions=_NEXT_PUBLIC_CONTENTFUL_SPACE_ID=$NEXT_PUBLIC_CONTENTFUL_SPACE_ID,_NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=$NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN`
+Build the app using `gcloud builds submit --config=cloudbuild.yaml --substitutions=_SPACE_ID=$_NEXT_PUBLIC_CONTENTFUL_SPACE_ID,_TOKEN=$_NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN`
 
-Deploy the app using `gcloud run deploy recipe-app --image gcr.io/$GCP_PROJECT_ID/recipe_app --update-env-vars CONTENTFUL_ACCESS_TOKEN=$CONTENTFUL_ACCESS_TOKEN`
+Deploy the app using `gcloud run deploy recipe-app --image gcr.io/$GCP_PROJECT_ID/recipe-app-image --update-env-vars _NEXT_PUBLIC_CONTENTFUL_SPACE_ID=$_NEXT_PUBLIC_CONTENTFUL_SPACE_ID,_NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=$_NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN`
