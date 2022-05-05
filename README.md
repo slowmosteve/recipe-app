@@ -13,7 +13,7 @@ Run the app using development server `npm run dev`
 
 # Build and run with Docker
 
-Build the app using `docker compose up`
+Build the app using `docker compose build` followed by `docker compose up`. Shut down the containers with `docker compose down`.
 
 # Build and run on GCP Cloud Run
 
